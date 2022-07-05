@@ -1,25 +1,26 @@
 package com.silas.todo;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 
 @Entity
+@Table(name="Items")
 public class Todo {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String title;
     private String description;
     private boolean completed;
     private Date deadline;
 
-    protected Todo(){}
+    public Todo(){}
 
     public Todo(String title, String description, Date deadline){
         this.title = title;
@@ -27,11 +28,11 @@ public class Todo {
         this.completed=false;
         this.deadline= deadline;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
