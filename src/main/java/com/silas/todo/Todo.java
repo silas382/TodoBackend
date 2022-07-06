@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 
 @Entity
-@Table(name="Items")
+@Table(name="todo")
 public class Todo {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
