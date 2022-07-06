@@ -25,6 +25,7 @@ public class TodoController {
 
     @GetMapping("/todolist")
     public List<Todo> all(){
+        // Using built in JPA repository findall method
         return todoRepository.findAll();
     }
 }
