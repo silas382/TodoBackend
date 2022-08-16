@@ -19,12 +19,7 @@ public class TodoApplication  {
 	}
 
 
-	public CommandLineRunner demo(TodoRepository repository){
-		return (args) -> {
-			//saving a few todos
-			repository.save(new Todo("Learn code", "doing spring", new Date()));
-		};
-	}
 
+	//nextval('employees_id_seq'::regclass)
 
 }

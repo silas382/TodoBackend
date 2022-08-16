@@ -2,32 +2,33 @@ package com.silas.todo;
 
 import java.util.Date;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 @Table(name="todo")
 public class Todo {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Integer id;
+    @Column(name = "title", nullable = false)
     private String title;
+    @Column(name = "description")
     private String description;
+    @Column(name = "completed")
     private boolean completed;
+    @Column(name = "deadline")
     private Date deadline;
 
-    public Todo(){}
 
-    public Todo(String title, String description, Date deadline){
-        this.title = title;
-        this.description = description;
-        this.completed=false;
-        this.deadline= deadline;
-    }
+//    public Todo(int id, String title, String description, Date deadline){
+//        this.id = id;
+//        this.title = title;
+//        this.description = description;
+//        this.completed=false;
+//        this.deadline= deadline;
+//    }
     public Integer getId() {
         return id;
     }
